@@ -2,14 +2,14 @@
 
 namespace PiotrPress;
 
-final class Singleton {
-    private static $instance = null;
-
+abstract class Singleton {
     final private function __clone() {}
     final private function __wakeup() {}
-    final private function __construct() {}
+
+    protected function __construct() {}
 
     static public function instance() {
-        return null === self::$instance ? self::$instance = new Singleton() : self::$instance;
+        static $instance = null;
+        return null === $instance ? $instance = new static() : $instance;
     }
 }

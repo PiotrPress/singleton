@@ -2,7 +2,7 @@
   "name": "piotrpress/singleton",
   "type": "library",
   "license": "GPL-3.0",
-  "description": "This library is a Singleton (anti)pattern implementation.",
+  "description": "This library is a Singleton (anti)pattern implementation using a Class Abstraction with an Object Inheritance support.",
   "homepage": "https://PiotrPress",
   "authors": [
     {
@@ -11,7 +11,7 @@
     }
   ],
   "keywords": [
-    "singleton", "pattern", "antipattern"
+    "singleton", "pattern", "antipattern", "inheritance", "object inheritance"
   ],
   "require": {
     "php": "^7.4"
