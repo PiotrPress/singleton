@@ -2,7 +2,7 @@
 
 namespace PiotrPress;
 
-abstract class Singleton {
+trait Singleton {
     final private function __clone() {}
     final private function __wakeup() {}
 
