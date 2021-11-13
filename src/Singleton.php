@@ -13,12 +13,13 @@ trait Singleton {
 
         if ( $instance ) return $instance;
 
-        $args = \func_get_args();
-        $params = [];
-        for ( $num = 0; $num < \func_num_args(); $num ++ )
-            $params[] = \sprintf( '$args[%s]', $num );
+        $reflection = new \ReflectionClass( static::class );
 
-        eval( \sprintf( '$instance = new static( %s );', \implode( ', ', $params ) ) );
+        $instance = $reflection->newInstanceWithoutConstructor();
+
+        $constructor = $reflection->getConstructor();
+        $constructor->setAccessible( true );
+        $constructor->invokeArgs( $instance, \func_get_args() );
 
         return $instance;
     }
