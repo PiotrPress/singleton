@@ -15,20 +15,27 @@ require __DIR__ . '/vendor/autoload.php';
 
 use PiotrPress\Singleton;
 
-class Parent {
+class ExampleParent {
     use Singleton;
 }
 
-class Example extends Parent {
+class Example extends ExampleParent {
     protected function __construct( $arg ) {}
 }
 
-Example::instance( 'arg' );
+Example::setInstance( 'arg' );
+Example::getInstance();
 ```
+
+## Methods
+* `setInstance()` - executes `__construct()` and can be called only once, otherwise `Exception` will be throwen
+* `getInstance()` - returns `null` before successfully `setInstance()` call
+* `issetInstance()` - returns `true` if an instance exists, `false` otherwise
+* `unsetInstance()` - unsets an instance
 
 ## Requirements
 
-PHP ^`7.4` version.
+PHP >= `7.4` version.
 
 ## License
 
