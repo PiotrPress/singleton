@@ -1,6 +1,6 @@
 # Singleton
 
-This library is a [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) (anti)pattern implementation using a [Class Abstraction](https://www.php.net/manual/en/language.oop5.abstract.php) with an [Object Inheritance](https://www.php.net/manual/en/language.oop5.inheritance.php) support.
+This library is a [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) (anti)pattern implementation using a [Class Abstraction](https://www.php.net/manual/en/language.oop5.abstract.php) with a support for an [Object Inheritance](https://www.php.net/manual/en/language.oop5.inheritance.php) and passing parameters to the constructor.
 
 ## Installation
 
@@ -15,9 +15,11 @@ require __DIR__ . '/vendor/autoload.php';
 
 use PiotrPress\Singleton;
 
-class Example extends Singleton {}
+class Example extends Singleton {
+    protected function __construct( $arg ) {}
+}
 
-Example::instance();
+Example::instance( 'arg' );
 ```
 
 ## Requirements

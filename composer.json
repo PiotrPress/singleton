@@ -2,7 +2,7 @@
   "name": "piotrpress/singleton",
   "type": "library",
   "license": "GPL-3.0",
-  "description": "This library is a Singleton (anti)pattern implementation using a Class Abstraction with an Object Inheritance support.",
+  "description": "This library is a Singleton (anti)pattern implementation using a Class Abstraction with a support for an Object Inheritance and passing parameters to the constructor.",
   "homepage": "https://PiotrPress",
   "authors": [
     {

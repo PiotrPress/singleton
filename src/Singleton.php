@@ -10,6 +10,16 @@ abstract class Singleton {
 
     static public function instance() {
         static $instance = null;
-        return null === $instance ? $instance = new static() : $instance;
+
+        if ( $instance ) return $instance;
+
+        $args = \func_get_args();
+        $params = [];
+        for ( $num = 0; $num < \func_num_args(); $num ++ )
+            $params[] = \sprintf( '$args[%s]', $num );
+
+        eval( \sprintf( '$instance = new static( %s );', \implode( ', ', $params ) ) );
+
+        return $instance;
     }
 }
