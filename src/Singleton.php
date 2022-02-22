@@ -22,7 +22,7 @@ trait Singleton {
         $trace = \end( $traces );
 
         foreach ( [ 'class', 'function' ] as $var )
-            $$var = $trace[ $var ] ?: '';
+            $$var = $trace[ $var ] ?? '';
 
         if ( self::class === $class )
             switch ( $function ) {
