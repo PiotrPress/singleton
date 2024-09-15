@@ -23,15 +23,8 @@ class Example extends ExampleParent {
     protected function __construct( $arg ) {}
 }
 
-Example::setInstance( 'arg' );
-Example::getInstance();
+Example::getInstance( 'arg' );
 ```
-
-## Methods
-* `setInstance()` - executes `__construct()` and can be called only once, otherwise `Exception` will be throwen
-* `getInstance()` - returns `null` before successfully `setInstance()` call
-* `issetInstance()` - returns `true` if an instance exists, `false` otherwise
-* `unsetInstance()` - unsets an instance
 
 ## Requirements
 
